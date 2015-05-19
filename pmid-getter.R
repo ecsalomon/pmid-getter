@@ -2,7 +2,7 @@
 # Author: Erika Salomon
 # Email: ecsalomon@gmail.com
 # Purpose: Returns a vector of PubMed IDs for a given journal in a given year
-# Packages used: XML, rCurl
+# Packages used: XML, RSelenium
 # Licence: CC BY-SA-NC
 
 # Parameters:
