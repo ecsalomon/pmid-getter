@@ -12,10 +12,11 @@
 # browser : the browser to use for obtaining PMIDs; options are "firefox", "chrome", "safari",
 #           "internet explorer", and "opera"; defaults to "firefox"
 
-pullPMIDs <- function(journal, year, maxResults=1000, browser="firefox") {
+pullPMIDs <- function(journal, year, maxResults=1000, browser=c("firefox", "chrome", "safari",
+                                                                "internet explorer", "opera") {
   ### Load packages ###
-  require(XML)
-  require(RSelenium)
+  suppressPackageStartupMessages(require(XML))
+  suppressPackageStartupMessages(require(RSelenium))
   
   ### Start Selenium browser ###
   capture.output(RSelenium::checkForServer())
