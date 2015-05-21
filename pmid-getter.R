@@ -1,4 +1,4 @@
-# Date: 2015-05-19
+# Date: 2015-05-21
 # Author: Erika Salomon
 # Email: ecsalomon@gmail.com
 # Purpose: Returns a vector of PubMed IDs for a given journal in a given year
@@ -9,11 +9,15 @@
 # journal : A string of the exact journal title
 # year : The publication year desired
 # maxResults : The maximum number of results to return; defaults to 1000
-# browser : the browser to use for obtaining PMIDs; options are "firefox", "chrome", "safari",
-#           "internet explorer", and "opera"; defaults to "firefox"
+# browser : the browser to use for obtaining PMIDs; options are "firefox", 
+#           "chrome", "safari", "internet explorer", and "opera"; 
+#           defaults to "firefox"
 
-pullPMIDs <- function(journal, year, maxResults=1000, browser=c("firefox", "chrome", "safari",
-                                                                "internet explorer", "opera") {
+pullPMIDs <- function(journal, year, maxResults=1000, browser=c("firefox", 
+                                                                "chrome", 
+                                                                "safari",
+                                                                "internet explorer", 
+                                                                "opera") {
   ### Load packages ###
   suppressPackageStartupMessages(require(XML))
   suppressPackageStartupMessages(require(RSelenium))
@@ -26,7 +30,8 @@ pullPMIDs <- function(journal, year, maxResults=1000, browser=c("firefox", "chro
   
   ### Build the URI ###
   uri <- paste('http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%22', 
-               journal, '%22[Journal]+AND+', year, '[pdat]&retmax=', maxResults, sep="")
+               journal, '%22[Journal]+AND+', year, '[pdat]&retmax=', 
+               maxResults, sep="")
   
   ### Get PubMed IDs ### 
   remDr$navigate(uri)
